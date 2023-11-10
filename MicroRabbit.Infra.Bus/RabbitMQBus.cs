@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -61,11 +62,13 @@ namespace MicroRabbit.Infra.Bus
             var eventName = typeof(T).Name;
             var handlerType = typeof(TH);
 
+            // Register event type as a name.
             if (!this._eventTypes.Contains(typeof(T)))
             {
                 this._eventTypes.Add(typeof(T));
             }
 
+            // Register event handler type.
             // this._handlers.TryAdd(eventName, new List<Type> { handlerType});
             if (!this._handlers.TryAdd(eventName, new List<Type> { handlerType, handlerType}))
             {
@@ -93,9 +96,6 @@ namespace MicroRabbit.Infra.Bus
                 consumer.Received += this.Consumer_Received;
 
                 channel.BasicConsume(eventName, true, consumer);
-
-
-
             }
         }
 
