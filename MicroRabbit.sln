@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Infra.Bus", "Mi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Infra.IoC", "MicroRabbit.Infra.IoC\MicroRabbit.Infra.IoC.csproj", "{6CEC40AB-26CC-4712-BFFB-AC4A53D9A3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Api", "MicroRabbit.Banking.Api\MicroRabbit.Banking.Api.csproj", "{A7458DAA-79DF-4BED-8B87-B08AA7F12DC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Api", "Microservices\Banking\Api\MicroRabbit.Banking.Api\MicroRabbit.Banking.Api.csproj", "{A7458DAA-79DF-4BED-8B87-B08AA7F12DC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{CC8E6A5F-E5E2-41D1-800F-6989948C9EF1}"
 EndProject
@@ -27,11 +27,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{5D485917-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{726306BE-E265-4992-9EB7-23A2A35647FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Application", "MicroRabbit.Banking.Application\MicroRabbit.Banking.Application.csproj", "{C9D3898B-2BF3-4163-A143-E5877A2C3218}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Application", "Microservices\Banking\Application\MicroRabbit.Banking.Application\MicroRabbit.Banking.Application.csproj", "{C9D3898B-2BF3-4163-A143-E5877A2C3218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Data", "MicroRabbit.Banking.Data\MicroRabbit.Banking.Data.csproj", "{152935AA-28C0-4778-968E-5D3669F7034D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Data", "Microservices\Banking\Data\MicroRabbit.Banking.Data\MicroRabbit.Banking.Data.csproj", "{152935AA-28C0-4778-968E-5D3669F7034D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Domain", "MicroRabbit.Banking.Domain\MicroRabbit.Banking.Domain.csproj", "{CEB5F310-01AD-403F-A1FE-9BF12F323046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Domain", "Microservices\Banking\Domain\MicroRabbit.Banking.Domain\MicroRabbit.Banking.Domain.csproj", "{CEB5F310-01AD-403F-A1FE-9BF12F323046}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{F9873BAB-E9C1-4F27-B3BF-60A9AD01AEDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{F3638B15-9CDC-43C7-86C8-601B24E14E02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{37624E33-8CB8-4C4D-B6C0-E098F538EFF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommandHandlers", "CommandHandlers", "{165A56C0-3E55-4ED6-B0D1-BE72D6F5B8F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{8E481398-C27E-49CD-AE47-8C9FF81B867E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHandlers", "EventHandlers", "{BAE3BE60-2C4A-4AA5-801E-02E0B3ECF09C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +84,12 @@ Global
 		{CEB5F310-01AD-403F-A1FE-9BF12F323046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{BAE3BE60-2C4A-4AA5-801E-02E0B3ECF09C} = {726306BE-E265-4992-9EB7-23A2A35647FC}
+		{8E481398-C27E-49CD-AE47-8C9FF81B867E} = {726306BE-E265-4992-9EB7-23A2A35647FC}
+		{165A56C0-3E55-4ED6-B0D1-BE72D6F5B8F4} = {726306BE-E265-4992-9EB7-23A2A35647FC}
+		{37624E33-8CB8-4C4D-B6C0-E098F538EFF0} = {726306BE-E265-4992-9EB7-23A2A35647FC}
+		{F3638B15-9CDC-43C7-86C8-601B24E14E02} = {726306BE-E265-4992-9EB7-23A2A35647FC}
+		{F9873BAB-E9C1-4F27-B3BF-60A9AD01AEDE} = {726306BE-E265-4992-9EB7-23A2A35647FC}
 		{CEB5F310-01AD-403F-A1FE-9BF12F323046} = {726306BE-E265-4992-9EB7-23A2A35647FC}
 		{152935AA-28C0-4778-968E-5D3669F7034D} = {5D485917-7E7C-40D3-B187-2661431F01E7}
 		{C9D3898B-2BF3-4163-A143-E5877A2C3218} = {A1C2BEAF-EFC5-453A-81B8-9E8C2FB3CC0D}
