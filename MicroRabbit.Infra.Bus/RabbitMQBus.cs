@@ -134,11 +134,11 @@ namespace MicroRabbit.Infra.Bus
 
             if (validType != null)
             {
-                var validObject = Activator.CreateInstance(validType);
-                var validEvent = JsonConvert.DeserializeObject(message, validType);
+                var validMessageEvent = JsonConvert.DeserializeObject(message, validType);
                 var concreteType = typeof(IEventHandler<>).MakeGenericType(validType); // ?? Why this?
+                var validObject = Activator.CreateInstance(validType);
 
-                await (Task)concreteType.GetMethod("Handle").Invoke(validObject, new object[] { validEvent });
+                await (Task)concreteType.GetMethod("Handle").Invoke(validObject, new object[] { validMessageEvent });
             }
         }
     }
